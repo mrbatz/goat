@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CyberGOAT</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{% static '/cyberapp/base.css' %}">
+<link rel="shortcut icon" type="image/png" href="/static/cyberapp/images/goat.png"/>
+  </head>
+  <body>
+    <!--Navbar Code-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hack
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" target="_blank" href="https://hackerone.com/">Hackerone</a>
+                <a class="dropdown-item" target="_blank" href="https://bugcrowd.com/">Bug Crowd</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Databases
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" target="_blank" href="https://shodan.io/">Shodan</a>
+                <a class="dropdown-item" target="_blank" href="https://censys.io/">Censys</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                MyIP
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" target="_blank" href="https://www.iplocation.net/">{{ip}}</a>
+              </div>
+            </li>
+            <h4>Welcome To CyberGOAT</h4>
+
+          </ul>
+
+                <ul  class="navbar navbar-nav navbar-right">
+                  {% if user.is_authenticated %}
+                  <a class="btn btn-md btn-danger" href="{% url 'logout' %}">Logout</a>
+                  {% else %}
+                  <form class="form-inline right my-2 my-lg-0" action='{% url 'user_login' %}' method='POST' >
+                    {% csrf_token %}
+                    <input  type='text' name='username' placeholder='Enter Username' id="username">
+                    <input type='password' name='password' placeholder="Enter Password">
+                    <input type='submit' class='btn btn-danger btn-sm ' value='Login'>
+
+                    </form>
+                {% endif %}
+              </ul>
+            </div>
+          </nav>
+
+    {%block content%}
+
+    {% endblock%}
+  </body>
+</html>

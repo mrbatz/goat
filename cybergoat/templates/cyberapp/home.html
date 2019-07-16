@@ -1,0 +1,123 @@
+
+{% load static %}
+
+{%block content%}
+<head>
+  <!--Dropdown-right menu-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!--end-->
+
+<link rel="stylesheet" type='text/css' href="{% static 'cyberapp/home.css'%}">
+  </head>
+
+
+
+
+  <div class="jumbotron" id="welcome" >
+<div class='container' >
+<h1> Welcome Home </h1>
+</div>
+</div>
+
+
+  <div class="jumbotron" id="main_screen">
+    <div class="container">
+      <table>
+        <h3>Alfred</h3>
+        <tr ><td  id="alfred">{{alfred}}</td></tr>
+        <tr><td>
+        <form action="{% url 'home'%}" method="post">
+          <div class="container" id = "search">
+          <input type="search" name="alfred" aria-label="Search" placeholder="Enter Something">
+          <br>
+          <button class="btn btn-danger navbar-btn">Query</button>
+          </div>
+          {% csrf_token %}
+          </form>
+          </td></tr>
+        </table>
+        </div>
+        </div>
+
+
+        <div class="container" >
+          <div class="jumbotron" id="mybot">
+            <h4>Menu</h4>
+            <br>
+
+            <div class="dropdown dropright">
+
+ <button type="button" class="btn btn-primary dropdown-toggle" id="hack_btn" data-toggle="dropdown">
+   Front-Page
+ </button>
+ <div class="dropdown-menu">
+   <a class="dropdown-item" href="{% url 'user_login' %}">Confirm</a>
+
+ </div>
+</div>
+
+              <div class="dropdown dropright">
+
+   <button type="button" class="btn btn-primary dropdown-toggle" id="hack_btn" data-toggle="dropdown">
+     A1:Injection
+   </button>
+   <div class="dropdown-menu">
+     <a class="dropdown-item" href="#">Link 1</a>
+     <a class="dropdown-item" href="#">Link 2</a>
+     <a class="dropdown-item" href="#">Link 3</a>
+   </div>
+ </div>
+
+<div class="dropdown dropright">
+
+<button type="button" class="btn btn-primary dropdown-toggle" id="hack_btn" data-toggle="dropdown">
+A7: Cross-Site Scripting
+</button>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="https://www.wappalyzer.com" target="_blank">Technologies</a>
+<a class="dropdown-item" href="#">Source Code</a>
+<a class="dropdown-item" href="#">Link 3</a>
+</div>
+</div>
+
+
+<div class="dropdown dropright">
+
+<button type="button" class="btn btn-primary dropdown-toggle" id="hack_btn" data-toggle="dropdown">
+Logout
+</button>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="{% url 'logout' %}">Confirm</a>
+
+</div>
+</div>
+
+            </div>
+            </div>
+
+
+                    <div class="container" >
+                      <div class="jumbotron" id="mybot2">
+                        <h4>Crypto Account</h4>
+                          <div class="dropdown">
+                          <button type="button" class="btn btn-primary dropdown-toggle" id="hack_btn" data-toggle="dropdown">
+                          Show Account
+                          </button>
+                          <div class="dropdown-menu">
+                            <form action="{% url 'tools'%}" method='post' >
+                              {% csrf_token %}
+                          <input id="crypto_signon" type='text' name='username' placeholder='Enter Username' >
+                          <input id="crypto_signon" type='password' name='password' placeholder="Enter Password">
+                            <input  id="crypto_signon" type='submit' class='btn btn-danger' name="crypto" value="Start">
+                            </form>
+                          </div>
+                          </div>
+                        </div>
+                        </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,150 @@
+body{
+
+
+  background-image:  url("/static/cyberapp/images/home.jpeg");
+  no-repeat center center fixed;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+}
+
+.jumbotron{
+
+  background-color: #e0e0e0;
+  border-style:outset;
+  border: 3px solid #4a3d34
+}
+
+
+#welcome{
+  text-align: center;
+  position:absolute;
+  top:80px;
+  left:750px;
+  width:auto;
+
+  border-radius: 25px;
+
+}
+
+#main_screen{
+  padding: 100px 0;
+  padding-top: 1%;
+
+  border-radius: 25px;
+  background-color: gray;
+  position:absolute;
+  top: 330px;
+  text-align: center;
+  width:500px;
+  border: 5px;
+  position:absolute;
+  left:700px;
+
+}
+
+td{
+
+  text-align: center;
+}
+
+
+#crypto_signon{
+  width:300px;
+
+}
+
+
+#hack_btn{
+
+  width:300px;
+}
+
+h4{
+
+  text-align: center;
+  font-weight: bold;
+}
+
+
+h1{
+
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+th{
+
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn{
+background-color: #91013b;
+margin: auto;
+font-weight: bold;
+
+}
+
+h3{
+
+  font-weight: bold;
+  text-align: center;
+}
+
+#mybot{
+  padding: 50px 0;
+  border-radius: 25px;
+  background-color: gray;
+  text-align: center
+  border: 5px;
+  position:absolute;
+  left: 70px;
+  top:200px;
+  width:auto;
+
+}
+
+
+
+#mybot2{
+  padding: 50px 0;
+  border-radius: 25px;
+  background-color: gray;
+  text-align: center
+  width:35%
+  border: 5px;
+  position:absolute;
+  right: 70px;
+  top:200px;
+
+}
+
+#alfred{
+  border: 3px solid black;
+  width:300px;
+  height:auto;
+  border-radius: 25px;
+  text-align: center;
+}
+
+
+#stocks_row{
+  border-radius:25px;
+  max-width: 300px;
+  height: auto;
+}
+
+#search{
+text-align:center;
+position:absolute;
+top: 155px;
+
+}
+
+#response{
+  text-align: center;
+}

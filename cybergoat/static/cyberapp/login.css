@@ -1,0 +1,131 @@
+.jumbotron{
+  padding-top:25px;
+  background-color:#7c7980;
+  border-radius: 25px;
+  border-width: 8px;
+  border-style: outset;
+  border-color: purple;
+  color:black;
+  font-weight: bold;
+
+
+}
+
+
+
+#news{
+  position:fixed;
+  width: 30%;
+  max-width: 30%;
+  margin:auto;
+  left:35%;
+  top:18%;
+  padding-bottom:1%;
+
+}
+
+
+#weather{
+position: absolute;
+right:30px;
+top:18%;
+width: 30%;
+max-width: 30%;
+height:auto;
+margin-left: 2%;
+padding:1%;
+
+}
+
+#weather_image{
+width:100%;
+padding-top:2%;
+}
+
+
+#weather_table{
+
+  padding:2%;
+}
+
+#flight{
+
+position: absolute;
+top:18%;
+left:2%;
+height: 200px;
+width: 30%;
+max-width: 30%;
+margin-right: 2%;
+}
+
+
+#flight_table{
+
+  position: absolute;
+  margin:0;
+  padding: 1%;
+  left:2%;
+  top: 5%;
+
+}
+
+
+
+h3{
+
+text-align: center;
+font-weight: bold;
+}
+
+#username{
+
+  opacity: 0.2;
+}
+body{
+
+  background-image: url('images/back.jpg');
+  background-repeat: no-repeat;
+  background: cover;
+}
+
+td{
+  font-weight: bold;
+  text-align: left;
+  padding: 1.0%;
+
+}
+img{
+
+width:auto;
+max-width: 100%;
+border-radius: 25px;
+padding:2%;
+}
+
+
+tr.tr:nth-child(even){background-color: #e6e5e5;}
+tr.tr:nth-child(odd){background-color:  #b6b5b4;}
+
+#link{
+
+  color:white;
+  margin:auto;
+  position: fixed;
+  left:47%;
+  font-weight: bold;
+  max-width: 100%;
+}
+
+h5{
+  text-align: center;
+  color:black;
+  font-weight: bold;
+}
+
+.center{
+  position:absolute;
+  left:35%;
+  font-weight: bold;
+
+}

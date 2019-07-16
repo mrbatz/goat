@@ -1,0 +1,33 @@
+
+
+h4{
+
+  font-weight:bold;
+  margin:auto;
+  color:white;
+  position: fixed; /* or absolute */
+
+  left: 43%;
+
+}
+
+.form-inline{
+
+}
+
+form{
+
+  position: fixed;
+  right:2%;
+}
+
+.dropdown-item{
+
+font-weight: bold;
+background-color: gray;
+border: 1px solid black;
+}
+
+a{
+  font-weight: bold;
+}

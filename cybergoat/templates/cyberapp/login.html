@@ -1,0 +1,61 @@
+{% extends 'cyberapp/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+
+<head>
+  <link rel="stylesheet" href="{%static '/cyberapp/login.css'%}">
+
+  </head>
+
+
+  <!--Weather section-->
+  <div class="container">
+<div id= "weather" class="jumbotron">
+  <h3>Current Weather</h3>
+
+
+</div></div>
+
+
+
+
+
+
+</div></div>
+
+  <div class="container">
+<div id = "flight" class="jumbotron">
+
+  <h3>Search Flights</h3>
+<br>
+     <form  id = "flight_table" action="{% url 'home'%}" method="POST">
+       {% csrf_token %}
+    <!--   <input type="search" name="quote" aria-label="Search" placeholder="Enter a symbol"> -->
+      <br><br><br>
+       <input  type='submit' class='btn center btn-danger btn-lg' name="flight" value="Coming Soon">
+       </form>
+       {{basic}}
+
+     </div>
+</div>
+
+
+</div></div>
+
+
+
+<div id = "news" class="jumbotron">
+  <div  class="container">
+  <h3>Daily News</h3>
+        <h5>{{title}}</h5>
+        <img src={{image}} alt="No Image Available" ></img>
+    <p>Description: {{news_description}}<p>
+     <a class= "btn btn-lg btn-danger"id="link" href={{url}} target="_blank">Full Story</a>
+</div>
+</div>
+    </div>
+
+
+{% endblock %}
