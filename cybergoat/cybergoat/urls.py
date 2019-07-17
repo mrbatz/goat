@@ -25,8 +25,7 @@ urlpatterns = [
     url(r'^home/$', views.home, name='home'),
     url(r'^$', views.user_login, name = 'user_login'),
     url(r'^logout/$', views.user_logout, name='logout'),
-    url(r'^tools/$', views.tools, name='tools'),
     url(r'^register/$', views.register, name ='register'),
-    url(r'^prices/$', views.prices, name='prices'),
+    url(r'^budget/$', views.budget, name='budget'),
 
 ]
