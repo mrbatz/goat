@@ -7,13 +7,13 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
-from cyberapp.code import geo, news, alfred
+from cyberapp.code import geo, news, weather
 
 
 
 def user_login(request):
-    context={'title':news.title, 'image':news.image, 'ip':geo.ip, 'news_description':news.description,\
-'url':news.url}
+    context={'news_title':news.title, 'image':news.image, 'ip':geo.ip, 'news_description':news.description,\
+'url':news.url, 'cam':weather.image, 'cam_title':weather.title}
 
     if request.method =='POST':
         username = request.POST.get('username')
@@ -62,44 +62,8 @@ def register(request):
     return render(request, 'cyberapp/registration.html',{'user_form': user_form, 'registered':registered})
 
 
-def prices(request):
-
-    if request.method == "POST":
-        quote = request.POST['quote'].upper()
-        notfound = "Oops..Something went wrong. Please go back and try again."
-
-        #get json request of crypto prices
-
-        try:
-            symbol = requests.get('https://min-api.cryptocompare.com/data/pricemultifull?fsyms={}&tsyms=USD'.format(quote)).json()
-
-
-            symbol_name= symbol['RAW']['{}'.format(quote)]['USD']['FROMSYMBOL']
-
-            current_price= symbol['RAW']['{}'.format(quote)]['USD']['PRICE']
-            current_price = '{:.2f}'.format(current_price)
-            lowhour= symbol['RAW']['{}'.format(quote)]['USD']['LOWHOUR']
-            lowhour = '{:.2f}'.format(lowhour)
-            highhour= symbol['RAW']['{}'.format(quote)]['USD']['HIGHHOUR']
-            highhour = '{:.2f}'.format(highhour)
-            market = symbol['RAW']['{}'.format(quote)]['USD']['MARKET']
-            return render(request, 'cyberapp/prices.html',{'symbol_name':symbol_name,
-            'current_price':current_price, 'lowhour':lowhour, 'highhour':highhour, 'market':market})
-
-
-        except KeyError:
-                return render(request, 'cyberapp/prices.html', {'notfound':notfound})
-
-
-
-
-
-
-
-
-    else:
-
-        return render(request, 'cyberapp/prices.html', {'notfound':notfound})
+def budget(request):
+    return render(request, 'cyberapp/mybudget.html', {})
 
 
 @login_required
@@ -118,7 +82,3 @@ def home(request):
 
 
     return render(request, 'cyberapp/home.html',{})
-
-@login_required
-def tools(request):
-    return render(request, 'cyberapp/tools.html', {})

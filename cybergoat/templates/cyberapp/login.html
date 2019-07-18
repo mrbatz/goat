@@ -13,7 +13,9 @@
   <!--Weather section-->
   <div class="container">
 <div id= "weather" class="jumbotron">
-  <h3>Current Weather</h3>
+  <h3> Local WebCam</h3>
+  <img  src={{cam}} alt="N/A"/>
+  <h5>Location: {{cam_title}}</h5>
 
 
 </div></div>
@@ -42,16 +44,13 @@
 </div>
 
 
-</div></div>
-
-
 
 <div id = "news" class="jumbotron">
   <div  class="container">
   <h3>Daily News</h3>
-        <h5>{{title}}</h5>
+        <h5>{{news_title}}</h5>
         <img src={{image}} alt="No Image Available" ></img>
-    <p>Description: {{news_description}}<p>
+    <p> {{news_description}}<p>
      <a class= "btn btn-lg btn-danger"id="link" href={{url}} target="_blank">Full Story</a>
 </div>
 </div>

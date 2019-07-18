@@ -1,7 +1,7 @@
-bcrypt;
+bcrypt
 django
-matplotlib;
-django[argon2];
-Counter;
-gunicorn;
-apt-get install python3-bs4
+matplotlib
+django[argon2]
+Counter
+gunicorn
+python3-bs4

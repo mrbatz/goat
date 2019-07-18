@@ -53,11 +53,23 @@ padding-top:2%;
 position: absolute;
 top:18%;
 left:2%;
-height: 200px;
+max-height: 300px;
 width: 30%;
 max-width: 30%;
 margin-right: 2%;
 }
+
+#budget{
+
+position: absolute;
+bottom:20%;
+left:2%;
+max-height: 300px;
+width: 30%;
+max-width: 30%;
+margin-right: 2%;
+}
+
 
 
 #flight_table{
@@ -97,7 +109,7 @@ td{
 }
 img{
 
-width:auto;
+width:100%;
 max-width: 100%;
 border-radius: 25px;
 padding:2%;

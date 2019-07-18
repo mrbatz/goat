@@ -6,5 +6,16 @@ try:
 
     ip = response['ip']
 
-except KeyError:
-    ip= 'Unknown'
+except ConnectionError:
+    ip= 'MyIP'
+
+try:
+    alt = requests.get('https://api.ipgeolocationapi.com/geolocate/{}'.format(ip)).json()
+
+    lat = alt['geo']['latitude']
+    long = alt['geo']['longitude']
+
+except ConnectionError:
+    lat= 0
+    long = 0
+    print('Something went wrong.')
