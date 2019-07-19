@@ -37,5 +37,7 @@ try:
         image = r['result']['webcams'][0]['image']['current']['thumbnail']
         title = r['result']['webcams'][0]['title'].title()
 
-except (ConnectionError or IndexError):
+except (ConnectionError or OSError or IndexError or KeyError):
+        image = ''
+        title = ''
         print('Something went wrong.')
