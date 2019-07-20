@@ -11,6 +11,15 @@
 
 }
 
+#banner{
+
+width:auto;
+max-width: 15%;
+position:absolute;
+top:10%;
+left:45%;
+height:5%;
+}
 
 
 #news{
@@ -19,44 +28,33 @@
   max-width: 30%;
   margin:auto;
   left:35%;
-  top:18%;
+  top:25%;
   padding-bottom:1%;
 
 }
 
 
-#weather{
-position: absolute;
-right:30px;
-top:18%;
-width: 30%;
-max-width: 30%;
-height:auto;
-margin-left: 2%;
-padding:1%;
+#news2{
+  position:fixed;
+  width: 30%;
+  max-width: 30%;
+  margin:auto;
+  left:2%;
+  top:25%;
+  padding-bottom:1%;
 
 }
 
-#weather_image{
-width:100%;
-padding-top:2%;
-}
+#news3{
 
+  position:fixed;
+  width: 30%;
+  max-width: 30%;
+  margin:auto;
+  right:2%;
+  top:25%;
+  padding-bottom:1%;
 
-#weather_table{
-
-  padding:2%;
-}
-
-#flight{
-
-position: absolute;
-top:18%;
-left:2%;
-max-height: 300px;
-width: 30%;
-max-width: 30%;
-margin-right: 2%;
 }
 
 #budget{
@@ -72,15 +70,6 @@ margin-right: 2%;
 
 
 
-#flight_table{
-
-  position: absolute;
-  margin:0;
-  padding: 1%;
-  left:2%;
-  top: 5%;
-
-}
 
 
 
@@ -123,9 +112,8 @@ tr.tr:nth-child(odd){background-color:  #b6b5b4;}
 
   color:white;
   margin:auto;
-  position: fixed;
-  left:47%;
-  font-weight: bold;
+  position:relative;
+  left:35%;
   max-width: 100%;
 }
 

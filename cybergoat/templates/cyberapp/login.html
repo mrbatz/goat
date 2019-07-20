@@ -9,52 +9,38 @@
 
   </head>
 
-
-  <!--Weather section-->
-  <div class="container">
-<div id= "weather" class="jumbotron">
-  <h3> Local WebCam</h3>
-  <img  src={{cam}} alt="N/A"/>
-  <h5>Location: {{cam_title}}</h5>
-
-
+<div class="jumbotron" id="banner">
+<h3>Top News: </h3>
+  </div>
+  <div id = "news" class="jumbotron">
+    <div  class="container">
+        <h5>{{news_title}}</h5>
+        <img src={{image}} alt="No Image Available" >
+    <p> {{news_description}}<p>
+     <a class= "btn btn-lg btn-danger"id="link" href={{url}} target="_blank" >Full Story</a>
 </div></div>
 
 
-
-
-
-
-</div></div>
-
-  <div class="container">
-<div id = "flight" class="jumbotron">
-
-  <h3>Search Flights</h3>
-<br>
-     <form  id = "flight_table" action="{% url 'home'%}" method="POST">
-       {% csrf_token %}
-    <!--   <input type="search" name="quote" aria-label="Search" placeholder="Enter a symbol"> -->
-      <br><br><br>
-       <input  type='submit' class='btn center btn-danger btn-lg' name="flight" value="Coming Soon">
-       </form>
-       {{basic}}
+  <div id = "news2" class="jumbotron">
+    <div  class="container">
+        <h5>{{news_title2}}</h5>
+        <img src={{image2}} alt="No Image Available" >
+    <p> {{news_description2}}<p>
+     <a class= "btn btn-lg btn-danger"id="link" href={{url2}} target="_blank">Full Story</a>
 
      </div>
 </div>
 
 
 
-<div id = "news" class="jumbotron">
+<div id = "news3" class="jumbotron">
   <div  class="container">
-  <h3>Daily News</h3>
-        <h5>{{news_title}}</h5>
-        <img src={{image}} alt="No Image Available" ></img>
-    <p> {{news_description}}<p>
-     <a class= "btn btn-lg btn-danger"id="link" href={{url}} target="_blank">Full Story</a>
+        <h5>{{news_title3}}</h5>
+        <img src={{image3}} alt="No Image Available" >
+    <p> {{news_description3}}<p>
+     <a class= "btn btn-lg btn-danger"id="link" href={{url3}} target="_blank">Full Story</a>
 </div>
 </div>
-    </div>
 
 
 {% endblock %}

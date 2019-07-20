@@ -7,13 +7,16 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
-from cyberapp.code import geo, news, weather
+from cyberapp.code import news, cam
+
 
 
 
 def user_login(request):
-    context={'news_title':news.title, 'image':news.image, 'ip':geo.ip, 'news_description':news.description,\
-'url':news.url, 'cam':weather.image, 'cam_title':weather.title}
+    context={'news_title':news.title, 'image':news.image, 'news_description':news.description,\
+'url':news.url,'news_title2':news.title2, 'image2':news.image2, 'news_description2':news.description2,\
+'ur2':news.url2, 'news_title3':news.title3, 'image3':news.image3, 'news_description3':news.description3,\
+'url3':news.url3, 'cam':cam.image, 'cam_title':cam.title}
 
     if request.method =='POST':
         username = request.POST.get('username')
